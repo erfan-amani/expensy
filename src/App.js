@@ -47,10 +47,15 @@ const INITIAL_EXPENSES = [
 const App = () => {
   const [expenses, setExpenses] = useState(INITIAL_EXPENSES);
 
+  const addNewExpense = (enteredExpense) => {
+    const newExpenseData = { id: Math.random().toString(), ...enteredExpense };
+    setExpenses((prevExpenses) => [newExpenseData, ...prevExpenses]);
+  };
+
   return (
     <Card className="container">
       <ExpensesChart />
-      <ExpensesData items={expenses} />
+      <ExpensesData items={expenses} addNewExpenseHandler={addNewExpense} />
     </Card>
   );
 };

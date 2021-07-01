@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './ExpenseForm.css';
+import '../NewExpense/ExpenseForm.css';
 
-const ExpenseForm = () => {
+const ExpenseForm = ({ addNewExpenseHandler }) => {
   const [enteredTitle, setEnteredTitle] = useState('');
   const [enteredDate, setEnteredDate] = useState('');
   const [enteredAmount, setEnteredAmount] = useState('');
@@ -25,7 +25,7 @@ const ExpenseForm = () => {
       date: new Date(enteredDate),
     };
     emptyInputs();
-    console.log(newExpense);
+    addNewExpenseHandler(newExpense);
   };
 
   const emptyInputs = (event = null) => {

@@ -1,12 +1,12 @@
 import React from 'react';
 import './ExpensesData.css';
-import ExpenseForm from './ExpenseForm';
+import ExpenseForm from '../NewExpense/ExpenseForm';
 import ExpensesList from './ExpensesList';
 
-const ExpensesData = ({ items }) => {
+const ExpensesData = ({ items, addNewExpenseHandler }) => {
   return (
     <div className="expenses-data">
-      <ExpenseForm />
+      <ExpenseForm addNewExpenseHandler={addNewExpenseHandler} />
       <ExpensesList items={items} />
     </div>
   );
