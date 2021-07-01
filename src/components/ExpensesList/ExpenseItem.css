@@ -1,0 +1,22 @@
+.expense-item {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  background-color: #f4c7ab;
+  padding: 10px 20px;
+  /* border-radius: 10px; */
+}
+
+.expense-item__title {
+  font-weight: 500;
+  flex-grow: 3;
+}
+.expense-item__date {
+  font-weight: 300;
+  font-size: 14px;
+  flex-grow: 0.5;
+}
+.expense-item__amount {
+  font-weight: 400;
+  /* flex-grow: 1; */
+}

@@ -1,8 +1,20 @@
 import React from 'react';
-import Card from '../UI/Card';
+import './ExpensesList.css';
+import ExpenseItem from './ExpenseItem';
 
-const ExpensesList = () => {
-  return <Card className="expenses-list"></Card>;
+const ExpensesList = ({ items }) => {
+  return (
+    <div className="expenses-list">
+      {items.map((item) => (
+        <ExpenseItem
+          key={item.id}
+          title={item.title}
+          date={item.date}
+          amount={item.amount}
+        />
+      ))}
+    </div>
+  );
 };
 
 export default ExpensesList;
