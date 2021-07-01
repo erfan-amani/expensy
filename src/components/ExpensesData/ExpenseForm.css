@@ -17,6 +17,7 @@
 }
 .expenses-form input:focus {
   outline: none;
+  border: 2px solid #2a2b2a;
 }
 .expenses-form__submit {
   display: flex;
