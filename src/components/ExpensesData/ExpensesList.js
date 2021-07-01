@@ -1,6 +1,7 @@
 import React from 'react';
 import './ExpensesList.css';
 import ExpenseItem from './ExpenseItem';
+import FilterExpenses from './FilterExpenses';
 
 const ExpensesList = ({ items }) => {
   return (
