@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import ExpensesChart from './components/ExpensesChart/ExpensesChart';
-import ExpensesList from './components/ExpensesList/ExpensesList';
+import ExpensesData from './components/ExpensesData/ExpensesData';
 import Card from './components/UI/Card';
 
 const INITIAL_EXPENSES = [
@@ -24,6 +24,24 @@ const INITIAL_EXPENSES = [
     amount: 450,
     date: new Date(2021, 5, 12),
   },
+  {
+    id: 'e5',
+    title: 'Keyboard',
+    amount: 30,
+    date: new Date(2021, 5, 22),
+  },
+  {
+    id: 'e7',
+    title: 'New Shose',
+    amount: 90.5,
+    date: new Date(2021, 6, 13),
+  },
+  {
+    id: 'e8',
+    title: 'Sunglasses',
+    amount: 70,
+    date: new Date(2021, 8, 2),
+  },
 ];
 
 const App = () => {
@@ -32,7 +50,7 @@ const App = () => {
   return (
     <Card className="container">
       <ExpensesChart />
-      <ExpensesList items={expenses} />
+      <ExpensesData items={expenses} />
     </Card>
   );
 };
