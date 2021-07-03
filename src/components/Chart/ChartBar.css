@@ -1,0 +1,24 @@
+.chart-bar {
+  display: grid;
+  grid-template-rows: 85% 1fr;
+  justify-content: center;
+  gap: 10px;
+}
+
+.chart-bar__bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.chart-bar__fill {
+  background-color: #c4c4c4;
+  transition: height 0.2s;
+  height: 70%;
+}
+
+.chart-bar__label {
+  /* transform: rotate(90deg); */
+}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import ExpensesChart from './components/ExpensesChart/ExpensesChart';
+import Chart from './components/Chart/Chart';
 import ExpensesData from './components/ExpensesData/ExpensesData';
 import Card from './components/UI/Card';
 
@@ -54,7 +54,7 @@ const App = () => {
 
   return (
     <Card className="container">
-      <ExpensesChart />
+      <Chart expenses={expenses} />
       <ExpensesData items={expenses} addNewExpenseHandler={addNewExpense} />
     </Card>
   );

@@ -1,0 +1,38 @@
+.chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 50%;
+  border-radius: 20px 0 0;
+  background-color: #deedf0;
+  padding: 10px 30px 50px 30px;
+}
+
+.chart__header {
+  color: #645953;
+}
+
+.chart__board {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  justify-content: center;
+  width: 100%;
+  height: 60%;
+  padding: 40px 20px 0 20px;
+  background-color: #fff5eb;
+  border-radius: 20px;
+}
+
+.chart__details {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  padding: 0 10px;
+}
+
+.chart__details--total,
+.chart__details--max {
+  justify-self: end;
+}
