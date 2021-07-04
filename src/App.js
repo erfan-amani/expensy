@@ -46,16 +46,39 @@ const INITIAL_EXPENSES = [
 
 const App = () => {
   const [expenses, setExpenses] = useState(INITIAL_EXPENSES);
+  const [filteredYear, setFilteredYear] = useState('Filter year');
+
+  const filterChangeHandler = (selectedYear) => {
+    setFilteredYear(selectedYear);
+  };
+
+  let filteredExpenses = [...expenses];
+
+  if (filteredYear !== 'Filter year') {
+    filteredExpenses = expenses.filter(
+      (item) => item.date.getFullYear().toString() === filteredYear
+    );
+  }
 
   const addNewExpense = (enteredExpense) => {
-    const newExpenseData = { id: Math.random().toString(), ...enteredExpense };
+    const newExpenseData = {
+      id: Math.random().toString(),
+      ...enteredExpense,
+    };
     setExpenses((prevExpenses) => [newExpenseData, ...prevExpenses]);
   };
 
   return (
     <Card className="container">
-      <Chart expenses={expenses} />
-      <ExpensesData items={expenses} addNewExpenseHandler={addNewExpense} />
+      <Chart
+        items={filteredExpenses}
+        filterChangeHandler={filterChangeHandler}
+      />
+      <ExpensesData
+        items={filteredExpenses}
+        addNewExpenseHandler={addNewExpense}
+        filterChangeHandler={filterChangeHandler}
+      />
     </Card>
   );
 };

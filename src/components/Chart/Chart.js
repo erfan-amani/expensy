@@ -2,8 +2,8 @@ import React from 'react';
 import './Chart.css';
 import ChartBar from './ChartBar';
 
-const ExpensesChart = ({ expenses, max }) => {
-  const allExpensesAmount = expenses.map((expense) => expense.amount);
+const ExpensesChart = ({ items }) => {
+  const allExpensesAmount = items.map((expense) => expense.amount);
   const maxValue = Math.max(...allExpensesAmount);
   const chartDataPoints = [
     { label: 'Jan', value: 0 },
@@ -20,11 +20,13 @@ const ExpensesChart = ({ expenses, max }) => {
     { label: 'Dec', value: 0 },
   ];
 
-  for (const expense of expenses) {
+  const totalExpense = items.reduce((total, val) => total + val.amount, 0);
+
+  for (const expense of items) {
     const month = expense.date.getMonth();
     chartDataPoints[month].value += expense.amount;
   }
-  console.log(chartDataPoints);
+  console.log(totalExpense);
 
   return (
     <div className="chart">
@@ -41,9 +43,11 @@ const ExpensesChart = ({ expenses, max }) => {
       </div>
       <div className="chart__details">
         <p>Total in year:</p>
-        <span className="chart__details--total">$1450.25</span>
+        <span className="chart__details--total">${totalExpense}</span>
         <p>Maximum expense:</p>
-        <span className="chart__details--max">$530 - Buying TV</span>
+        <span className="chart__details--max">
+          ${items.length > 0 ? maxValue : 0}
+        </span>
       </div>
     </div>
   );
