@@ -20,5 +20,5 @@
 }
 
 .chart-bar__label {
-  /* transform: rotate(90deg); */
+  font-size: 13px;
 }

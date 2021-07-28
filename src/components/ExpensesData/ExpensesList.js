@@ -1,41 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './ExpensesList.css';
 import ExpenseItem from './ExpenseItem';
 import FilterExpenses from './FilterExpenses';
 
-const ExpensesList = ({ items, filterChangeHandler }) => {
-  // const [filteredYear, setFilteredYear] = useState('Filter year');
-
-  // const filterChangeHandler = (selectedYear) => {
-  //   setFilteredYear(selectedYear);
-  // };
-
+const ExpensesList = ({ items, filterChangeHandler, removeExpense }) => {
   let renderedExpenses = <p>No expenses found.</p>;
-  // if (filteredYear === 'Filter year') {
-  //   renderedExpenses = items.map((item) => (
-  //     <ExpenseItem
-  //       key={item.id}
-  //       title={item.title}
-  //       date={item.date}
-  //       amount={item.amount}
-  //     />
-  //   ));
-  // } else {
-  //   const filteredExpenses = items.filter(
-  //     (item) => item.date.getFullYear().toString() === filteredYear
-  //   );
-
-  //   if (filteredExpenses.length > 0) {
-  //     renderedExpenses = filteredExpenses.map((item) => (
-  //       <ExpenseItem
-  //         key={item.id}
-  //         title={item.title}
-  //         date={item.date}
-  //         amount={item.amount}
-  //       />
-  //     ));
-  //   }
-  // }
 
   if (items.length > 0) {
     renderedExpenses = items.map((item) => (
@@ -44,6 +13,7 @@ const ExpensesList = ({ items, filterChangeHandler }) => {
         title={item.title}
         date={item.date}
         amount={item.amount}
+        onRemove={removeExpense.bind(null, item.id)}
       />
     ));
   }

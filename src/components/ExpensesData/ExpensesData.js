@@ -4,7 +4,12 @@ import ExpenseForm from '../NewExpense/ExpenseForm';
 import ExpensesList from './ExpensesList';
 import AddIcon from '../UI/icon/AddIcon';
 
-const ExpensesData = ({ items, addNewExpenseHandler, filterChangeHandler }) => {
+const ExpensesData = ({
+  items,
+  addNewExpenseHandler,
+  removeExpense,
+  filterChangeHandler,
+}) => {
   const [formIsVisible, setFormIsVisible] = useState(false);
 
   const openFormHandler = () => {
@@ -28,7 +33,11 @@ const ExpensesData = ({ items, addNewExpenseHandler, filterChangeHandler }) => {
           <AddIcon />
         </button>
       )}
-      <ExpensesList items={items} filterChangeHandler={filterChangeHandler} />
+      <ExpensesList
+        items={items}
+        removeExpense={removeExpense}
+        filterChangeHandler={filterChangeHandler}
+      />
     </div>
   );
 };

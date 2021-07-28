@@ -5,6 +5,7 @@ import ChartBar from './ChartBar';
 const ExpensesChart = ({ items }) => {
   const allExpensesAmount = items.map((expense) => expense.amount);
   const maxValue = Math.max(...allExpensesAmount);
+  const formattedMax = maxValue > 0 ? `$${maxValue.toFixed(2)}` : '$0.00';
   const chartDataPoints = [
     { label: 'Jan', value: 0 },
     { label: 'Feb', value: 0 },
@@ -26,7 +27,8 @@ const ExpensesChart = ({ items }) => {
     const month = expense.date.getMonth();
     chartDataPoints[month].value += expense.amount;
   }
-  console.log(totalExpense);
+
+  const formattedTotal = `$${totalExpense.toFixed(2)}`;
 
   return (
     <div className="chart">
@@ -43,11 +45,9 @@ const ExpensesChart = ({ items }) => {
       </div>
       <div className="chart__details">
         <p>Total in year:</p>
-        <span className="chart__details--total">${totalExpense}</span>
+        <span className="chart__details--total">{formattedTotal}</span>
         <p>Maximum expense:</p>
-        <span className="chart__details--max">
-          ${items.length > 0 ? maxValue : 0}
-        </span>
+        <span className="chart__details--max">{formattedMax}</span>
       </div>
     </div>
   );

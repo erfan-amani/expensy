@@ -60,12 +60,16 @@ const App = () => {
     );
   }
 
-  const addNewExpense = (enteredExpense) => {
+  const addNewExpense = (expense) => {
     const newExpenseData = {
-      id: Math.random().toString(),
-      ...enteredExpense,
+      id: Math.random().toString() + expense.title,
+      ...expense,
     };
     setExpenses((prevExpenses) => [newExpenseData, ...prevExpenses]);
+  };
+
+  const removeExpense = (id) => {
+    setExpenses((prev) => prev.filter((exp) => exp.id !== id));
   };
 
   return (
@@ -77,6 +81,7 @@ const App = () => {
       <ExpensesData
         items={filteredExpenses}
         addNewExpenseHandler={addNewExpense}
+        removeExpense={removeExpense}
         filterChangeHandler={filterChangeHandler}
       />
     </Card>

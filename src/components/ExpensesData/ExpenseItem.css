@@ -4,12 +4,18 @@
   align-items: center;
   background-color: #f4c7ab;
   padding: 10px 20px;
+  gap: 10px;
   /* border-radius: 10px; */
 }
 
 .expense-item__title {
   font-weight: 500;
   flex-grow: 3;
+}
+.detail {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 .expense-item__date {
   font-weight: 300;
@@ -19,4 +25,9 @@
 .expense-item__amount {
   font-weight: 400;
   /* flex-grow: 1; */
+}
+
+.remove-icon {
+  display: flex;
+  cursor: pointer;
 }
