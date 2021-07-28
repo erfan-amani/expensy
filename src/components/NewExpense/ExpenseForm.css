@@ -29,12 +29,16 @@
 .expenses-form__submit .add {
   cursor: pointer;
   background-color: #deedf0;
-  font-size: 16px;
+  font-size: 14px;
   width: 40%;
   padding: 15px 5px;
   border: none;
 }
 .expenses-form__submit .cansel {
+  cursor: pointer;
+  font-size: 14px;
+  background-color: #fff;
+  border: none;
   color: #2a2b2a;
   text-decoration: none;
 }
