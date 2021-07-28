@@ -14,8 +14,6 @@ body {
   justify-content: center;
   margin: 0;
   padding: 0;
-  /* background-color: #fff5eb; */
-  /* background: linear-gradient(100.57deg, #e5b299 3.72%, #fff5eb 93.79%); */
   background: linear-gradient(260.39deg, #e5b299 3.92%, #fff5eb 94.29%);
   height: 100vh;
 }
@@ -25,6 +23,13 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
+  input,
+  select {
+    border-width: 1.3px !important;
+  }
+}
+
+@media only screen and (max-height: 751px) {
   body {
     height: auto;
     padding: 2rem 0;
