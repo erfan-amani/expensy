@@ -7,16 +7,18 @@
 
 .filter-expenses__header {
   justify-self: start;
+  color: #444;
 }
 
 .filter-expenses__select {
   justify-self: end;
 }
 .filter-expenses__select select {
-  padding: 2px 7px;
-  border-radius: 5px;
+  padding: 2px 0.5rem;
+  border-radius: 0.31rem;
   border: 2px solid #686965;
   font-family: inherit;
+  color: var(--dark-gray);
 }
 .filter-expenses__select select:focus {
   outline: none;

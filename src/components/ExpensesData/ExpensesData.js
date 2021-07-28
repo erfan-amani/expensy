@@ -22,6 +22,7 @@ const ExpensesData = ({
 
   return (
     <div className="expenses-data">
+      <h1 className="header">Expensy</h1>
       {formIsVisible ? (
         <ExpenseForm
           addNewExpenseHandler={addNewExpenseHandler}

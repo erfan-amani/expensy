@@ -74,14 +74,14 @@ const App = () => {
 
   return (
     <Card className="container">
-      <Chart
-        items={filteredExpenses}
-        filterChangeHandler={filterChangeHandler}
-      />
       <ExpensesData
         items={filteredExpenses}
         addNewExpenseHandler={addNewExpense}
         removeExpense={removeExpense}
+        filterChangeHandler={filterChangeHandler}
+      />
+      <Chart
+        items={filteredExpenses}
         filterChangeHandler={filterChangeHandler}
       />
     </Card>

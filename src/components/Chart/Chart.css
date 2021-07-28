@@ -2,15 +2,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 1.25rem;
   width: 50%;
-  border-radius: 20px 0 0;
+  border-radius: 0 1.25rem 1.25rem 0;
   background-color: #deedf0;
-  padding: 10px 30px 50px 30px;
-}
-
-.chart__header {
-  color: #645953;
+  padding: 3.125rem 1.875rem 3.125rem 1.875rem;
 }
 
 .chart__board {
@@ -18,10 +14,10 @@
   grid-template-columns: repeat(12, 1fr);
   justify-content: center;
   width: 100%;
-  height: 60%;
-  padding: 40px 20px 0 20px;
+  height: 70%;
+  padding: 2.5rem 1.25rem 0 1.25rem;
   background-color: #fff5eb;
-  border-radius: 20px;
+  border-radius: 1.25rem;
 }
 
 .chart__details {
@@ -29,10 +25,27 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
-  padding: 0 10px;
+  padding: 0 0.625rem;
+  color: var(--dark-gray);
+}
+.chart__details p {
+  margin-bottom: 0;
 }
 
 .chart__details--total,
 .chart__details--max {
   justify-self: end;
+}
+
+@media only screen and (max-width: 768px) {
+  .chart {
+    width: 100%;
+    border-radius: 0 0 1.25rem 1.25rem;
+    padding-bottom: 2rem;
+  }
+
+  .chart__board {
+    padding-top: 1rem;
+    height: 12rem;
+  }
 }

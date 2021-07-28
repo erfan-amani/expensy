@@ -3,31 +3,42 @@
   width: 100%;
   align-items: center;
   background-color: #f4c7ab;
-  padding: 10px 20px;
-  gap: 10px;
-  /* border-radius: 10px; */
+  padding: 0.625rem 1.25rem;
+  gap: 0.625rem;
 }
 
 .expense-item__title {
   font-weight: 500;
   flex-grow: 3;
+  color: var(--dark-gray);
 }
 .detail {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 0.31rem;
 }
 .expense-item__date {
   font-weight: 300;
-  font-size: 14px;
+  font-size: 0.875rem;
   flex-grow: 0.5;
+  color: var(--dark-gray);
 }
 .expense-item__amount {
   font-weight: 400;
-  /* flex-grow: 1; */
+  color: var(--dark-gray);
 }
 
 .remove-icon {
   display: flex;
   cursor: pointer;
+}
+
+.remove-icon svg {
+  stroke: var(--dark-gray);
+}
+
+@media only screen and (max-width: 768px) {
+  .expense-item__date {
+    font-weight: 400;
+  }
 }

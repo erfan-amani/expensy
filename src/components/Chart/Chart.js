@@ -32,7 +32,7 @@ const ExpensesChart = ({ items }) => {
 
   return (
     <div className="chart">
-      <h1 className="chart__header">Expensy</h1>
+      {/* <h1 className="header">Analyse</h1> */}
       <div className="chart__board">
         {chartDataPoints.map((dataPoint) => (
           <ChartBar

@@ -2,7 +2,7 @@
   display: grid;
   grid-template-rows: 85% 1fr;
   justify-content: center;
-  gap: 10px;
+  gap: 0.625rem;
 }
 
 .chart-bar__bar {
@@ -20,5 +20,15 @@
 }
 
 .chart-bar__label {
-  font-size: 13px;
+  font-size: 0.81rem;
+  color: var(--dark-gray);
+}
+
+@media only screen and (max-width: 768px) {
+  .chart-bar {
+    grid-template-rows: 75% 1fr;
+  }
+  .chart-bar__label {
+    font-size: 1rem;
+  }
 }
